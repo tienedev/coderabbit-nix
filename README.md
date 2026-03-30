@@ -1,6 +1,6 @@
 # coderabbit-nix
 
-Nix flake that packages the [CodeRabbit CLI](https://coderabbit.ai) -- an AI-powered code review tool for the command line.
+Nix flake that packages the [CodeRabbit CLI](https://coderabbit.ai) -- an AI-powered code review tool for the command line. Auto-updated daily via GitHub Actions.
 
 There is no upstream Nix package for CodeRabbit. This flake fetches the official pre-built binary and patches it for NixOS using [wrap-buddy](https://github.com/Mic92/wrap-buddy).
 
@@ -66,11 +66,9 @@ Run `cr --help` for the full command reference.
 
 ## Updating
 
-When a new CodeRabbit CLI version is released:
+**Automatic:** A GitHub Action runs daily at 08:00 UTC, checks for new CodeRabbit CLI releases, computes hashes for all 4 platforms, and commits the update directly to `main`. Just run `nix flake update coderabbit` in your config to pick it up.
 
-1. Edit `package.nix` -- bump `version` and update the `hash` for each platform.
-2. To get the new hashes, set each hash to `""` and run `nix build` -- the error output will include the correct hash.
-3. Commit and push.
+**Manual:** Edit `package.nix` -- bump `version` and update the `hash` for each platform. To get the new hashes, set each hash to `""` and run `nix build` -- the error output will include the correct hash.
 
 ## Supported platforms
 

@@ -1,5 +1,5 @@
 {
-  description = "Nix flake for CodeRabbit CLI — AI-powered code review from the command line";
+  description = "Nix flake for CodeRabbit CLI — AI-powered code review from the command line (auto-updated daily)";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
